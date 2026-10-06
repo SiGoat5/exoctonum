@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="theme-color" content="#0b0a08">
+
   <title>EX OCTO, UNUM</title>
 
   <style>
+
     :root {
       --black: #0b0a08;
+      --deep-black: #070706;
       --bronze: #b58a52;
       --bronze-light: #d0ad77;
       --cream: #e7ddcb;
@@ -26,70 +30,111 @@
 
     body {
       margin: 0;
+
       background:
-        radial-gradient(circle at top, #1a1712 0%, #0b0a08 42%, #070706 100%);
+        radial-gradient(
+          circle at top,
+          #1a1712 0%,
+          #0b0a08 42%,
+          #070706 100%
+        );
+
       color: var(--cream);
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       line-height: 1.7;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
       min-height: 100vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       padding: 40px 20px;
     }
 
     .hero-inner {
-      max-width: 760px;
+      max-width: 800px;
+      width: 100%;
     }
+
+
+    /* EIGHT-SPOKED WHEEL */
 
     .wheel {
       width: 190px;
       height: 190px;
+
       margin: 0 auto 45px;
+
       position: relative;
+
       border: 3px solid var(--bronze);
       border-radius: 50%;
+
       box-shadow:
         0 0 0 7px rgba(181,138,82,.07),
-        inset 0 0 30px rgba(181,138,82,.08);
+        inset 0 0 30px rgba(181,138,82,.08),
+        0 0 45px rgba(0,0,0,.6);
     }
 
     .wheel::after {
       content: "MMXIII";
+
       position: absolute;
+
       width: 68px;
       height: 68px;
+
       border: 2px solid var(--bronze);
       border-radius: 50%;
+
       top: 50%;
       left: 50%;
+
       transform: translate(-50%, -50%);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       background: var(--black);
+
       color: var(--bronze-light);
+
       font-size: 14px;
       letter-spacing: 1px;
+
       z-index: 3;
     }
 
     .spoke {
       position: absolute;
+
       width: 3px;
       height: 100%;
-      background: linear-gradient(
-        transparent 13%,
-        var(--bronze) 13%,
-        var(--bronze) 87%,
-        transparent 87%
-      );
+
+      background:
+        linear-gradient(
+          transparent 13%,
+          var(--bronze) 13%,
+          var(--bronze) 87%,
+          transparent 87%
+        );
+
       left: calc(50% - 1.5px);
       top: 0;
     }
@@ -99,38 +144,59 @@
     .s3 { transform: rotate(90deg); }
     .s4 { transform: rotate(135deg); }
 
+
+    /* MAIN TITLE */
+
     h1 {
       margin: 0;
+
       color: var(--bronze-light);
+
       font-size: clamp(38px, 8vw, 72px);
+
       font-weight: normal;
+
       letter-spacing: .18em;
     }
 
     .motto {
       margin-top: 16px;
+
       font-size: 17px;
+
       font-style: italic;
+
       letter-spacing: .12em;
+
       color: var(--cream);
     }
 
     .founding {
       margin-top: 30px;
+
       font-size: 12px;
+
       letter-spacing: .35em;
+
       color: var(--bronze);
     }
 
     .scroll {
       margin-top: 70px;
+
       color: var(--muted);
+
       font-size: 11px;
+
       letter-spacing: .25em;
+
       text-transform: uppercase;
     }
 
-    /* INTRO */
+
+    /* =========================
+       INTRODUCTION
+       ========================= */
 
     section {
       padding: 100px 24px;
@@ -138,168 +204,395 @@
 
     .intro {
       max-width: 700px;
+
       margin: auto;
+
       text-align: center;
+
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     .intro h2 {
       color: var(--bronze-light);
+
       font-weight: normal;
+
       letter-spacing: .18em;
+
       font-size: 24px;
+
+      margin-bottom: 35px;
     }
 
     .intro p {
       color: #c9c0b1;
+
       font-size: 17px;
+
+      margin: 18px 0;
     }
 
     .eight {
-      margin-top: 35px;
+      margin-top: 40px;
+
       color: var(--bronze);
+
       letter-spacing: .3em;
+
       font-size: 12px;
     }
 
-    /* MEMBERS */
+
+    /* =========================
+       MEMBERS
+       ========================= */
 
     .members {
       max-width: 900px;
+
       margin: auto;
+
+      padding: 0 24px;
     }
 
     .member {
-      min-height: 70vh;
+      min-height: 90vh;
+
       display: flex;
+
       align-items: center;
+
       border-bottom: 1px solid var(--line);
-      padding: 90px 0;
+
+      padding: 100px 0;
     }
 
     .member-inner {
-      max-width: 650px;
+      max-width: 680px;
+
       margin: auto;
+
       width: 100%;
+
+      text-align: center;
     }
+
+
+    /* ROMAN NUMBER */
 
     .number {
       color: var(--bronze);
-      font-size: 12px;
-      letter-spacing: .35em;
+
+      font-size: 13px;
+
+      letter-spacing: .4em;
+
+      margin-bottom: 5px;
     }
+
+
+    /* NAME */
 
     .member h2 {
       color: var(--bronze-light);
-      font-size: clamp(36px, 7vw, 58px);
+
+      font-size: clamp(38px, 7vw, 58px);
+
       font-weight: normal;
-      letter-spacing: .12em;
-      margin: 12px 0 4px;
+
+      letter-spacing: .14em;
+
+      margin: 5px 0 8px;
     }
+
+
+    /* NAME ORIGIN */
 
     .meaning {
       color: var(--muted);
+
       font-style: italic;
-      margin-bottom: 35px;
+
+      font-size: 15px;
+
+      letter-spacing: .04em;
+
+      margin-bottom: 38px;
     }
 
-    .symbol {
-      font-size: 40px;
-      margin: 25px 0;
-      color: var(--bronze);
+
+    /* =========================
+       BRONZE MEMBER SYMBOLS
+       ========================= */
+
+    .symbol-wrap {
+      width: 100%;
+
+      max-width: 440px;
+
+      margin: 0 auto 42px;
+
+      position: relative;
     }
+
+    .member-symbol {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      margin: auto;
+
+      border: 0;
+
+      filter:
+        drop-shadow(0 12px 18px rgba(0,0,0,.5));
+
+      transition:
+        transform .45s ease,
+        filter .45s ease;
+    }
+
+    .member-symbol:hover {
+      transform: scale(1.025);
+
+      filter:
+        drop-shadow(0 15px 24px rgba(0,0,0,.65));
+    }
+
+
+    /* TEXT BELOW SYMBOL */
 
     .lines {
+      max-width: 620px;
+
+      margin: auto;
+
       font-size: 17px;
+
       color: #d2c9ba;
     }
 
     .lines p {
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
-    /* END */
+    .lines p:last-child {
+      color: #c9ad82;
+
+      margin-top: 25px;
+    }
+
+
+    /* =========================
+       CLOSING
+       ========================= */
 
     .ending {
       text-align: center;
-      padding: 140px 20px;
+
+      padding: 150px 20px 120px;
     }
 
-    .ending .small-wheel {
-      font-size: 42px;
-      color: var(--bronze);
-      margin-bottom: 30px;
+    .ending-wheel {
+      width: 80px;
+      height: 80px;
+
+      border: 2px solid var(--bronze);
+
+      border-radius: 50%;
+
+      margin: 0 auto 40px;
+
+      position: relative;
+
+      opacity: .8;
+    }
+
+    .ending-wheel::before,
+    .ending-wheel::after {
+      content: "";
+
+      position: absolute;
+
+      background: var(--bronze);
+
+      top: 50%;
+      left: 50%;
+
+      transform-origin: center;
+    }
+
+    .ending-wheel::before {
+      width: 2px;
+      height: 70px;
+
+      margin-top: -35px;
+      margin-left: -1px;
+
+      box-shadow:
+        0 0 0 0 var(--bronze);
+    }
+
+    .ending-wheel::after {
+      width: 70px;
+      height: 2px;
+
+      margin-left: -35px;
+      margin-top: -1px;
     }
 
     .ending h2 {
       color: var(--bronze-light);
+
       font-weight: normal;
+
       letter-spacing: .22em;
+
+      font-size: 28px;
     }
 
     .ending p {
       font-style: italic;
+
       color: var(--muted);
+
+      letter-spacing: .08em;
     }
 
     footer {
-      padding: 30px;
+      padding: 35px 20px;
+
       text-align: center;
+
       color: #665e53;
+
       font-size: 10px;
+
       letter-spacing: .3em;
+
+      border-top: 1px solid rgba(181,138,82,.08);
     }
 
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 600px) {
+
       section {
         padding: 75px 22px;
+      }
+
+      .hero {
+        min-height: 100svh;
       }
 
       .wheel {
         width: 155px;
         height: 155px;
+
+        margin-bottom: 38px;
+      }
+
+      .wheel::after {
+        width: 58px;
+        height: 58px;
+
+        font-size: 12px;
       }
 
       h1 {
         letter-spacing: .10em;
       }
 
+      .founding {
+        letter-spacing: .22em;
+
+        font-size: 10px;
+      }
+
+      .members {
+        padding: 0 20px;
+      }
+
       .member {
         min-height: auto;
-        padding: 85px 0;
+
+        padding: 90px 0;
+      }
+
+      .member h2 {
+        letter-spacing: .1em;
+      }
+
+      .meaning {
+        margin-bottom: 30px;
+      }
+
+      .symbol-wrap {
+        max-width: 360px;
+
+        margin-bottom: 35px;
+      }
+
+      .lines {
+        font-size: 16px;
+      }
+
+      .ending {
+        padding-top: 110px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- OPENING -->
+
+  <!-- =========================
+       OPENING
+       ========================= -->
 
   <header class="hero">
+
     <div class="hero-inner">
 
       <div class="wheel">
+
         <span class="spoke s1"></span>
         <span class="spoke s2"></span>
         <span class="spoke s3"></span>
         <span class="spoke s4"></span>
+
       </div>
 
       <h1>EX OCTO, UNUM</h1>
 
-      <div class="motto">From Eight, One.</div>
+      <div class="motto">
+        From Eight, One.
+      </div>
 
-      <div class="founding">THE FOUNDING FATHERS · MMXIII</div>
+      <div class="founding">
+        THE FOUNDING FATHERS · MMXIII
+      </div>
 
-      <div class="scroll">↓ &nbsp; The Eight</div>
+      <div class="scroll">
+        ↓ &nbsp; THE EIGHT
+      </div>
 
     </div>
+
   </header>
 
 
-  <!-- INTRODUCTION -->
+  <!-- =========================
+       INTRODUCTION
+       ========================= -->
 
   <section class="intro">
 
@@ -327,14 +620,20 @@
   </section>
 
 
-  <!-- MEMBERS -->
+
+  <!-- =========================
+       THE EIGHT
+       ========================= -->
 
   <main class="members">
 
 
-    <!-- LUKE -->
+    <!-- =====================
+         I · LUKE
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">I</div>
@@ -345,26 +644,65 @@
           Greek &amp; Latin tradition · associated with light
         </div>
 
-        <div class="symbol">𓆸</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/luke.png"
+            alt="Luke — Illuminate — oil lamp"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Thoughtfulness and learning have long accompanied his name.</p>
-          <p>Observes carefully before reaching judgement.</p>
-          <p>Has compassion for those who suffer.</p>
-          <p>Seeks understanding rather than easy answers.</p>
-          <p>His name recalls Luke the physician, healer and chronicler.</p>
-          <p>Values truth and takes care in its telling.</p>
-          <p>Brings light through knowledge, compassion and understanding.</p>
-          <p>His tradition is one of healing, learning and illuminating what is true.</p>
+
+          <p>
+            Thoughtfulness and learning have long accompanied his name.
+          </p>
+
+          <p>
+            Observes carefully before reaching judgement.
+          </p>
+
+          <p>
+            Has compassion for those who suffer.
+          </p>
+
+          <p>
+            Seeks understanding rather than easy answers.
+          </p>
+
+          <p>
+            His name recalls Luke the physician, healer and chronicler.
+          </p>
+
+          <p>
+            Values truth and takes care in its telling.
+          </p>
+
+          <p>
+            Brings light through knowledge, compassion and understanding.
+          </p>
+
+          <p>
+            His tradition is one of healing, learning and illuminating what is true.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- JEFF -->
+
+    <!-- =====================
+         II · JEFF
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">II</div>
@@ -375,26 +713,70 @@
           Germanic origin · peaceful pledge
         </div>
 
-        <div class="symbol">🤝</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/jeff.png"
+            alt="Jeff — Pledge — clasped hands"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Peace is a strength he carries within.</p>
-          <p>Places great value on promises made and faithfully kept.</p>
-          <p>Seeks harmony where others might find conflict.</p>
-          <p>Steadfastness is part of his nature.</p>
-          <p>Believes that strength need not be loud to endure.</p>
-          <p>Faith and constancy guide the path he follows.</p>
-          <p>Knows the worth of trust, once given.</p>
-          <p>Finds strength in bringing people together.</p>
+
+          <p>
+            Peace is a strength he carries within.
+          </p>
+
+          <p>
+            Places great value on promises made and faithfully kept.
+          </p>
+
+          <p>
+            Seeks harmony where others might find conflict.
+          </p>
+
+          <p>
+            Steadfastness is part of his nature.
+          </p>
+
+          <p>
+            Believes that strength need not be loud to endure.
+          </p>
+
+          <p>
+            Faith and constancy guide the path he follows.
+          </p>
+
+          <p>
+            Knows the worth of trust, once given.
+          </p>
+
+          <p>
+            Finds strength in bringing people together.
+          </p>
+
+          <p>
+            Carries with him an ancient association with peace,
+            faithfulness and keeping one's word.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- DAVID -->
+
+    <!-- =====================
+         III · DAVID
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">III</div>
@@ -405,25 +787,66 @@
           Hebrew origin · beloved
         </div>
 
-        <div class="symbol">◉</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/david.png"
+            alt="David — Courage — sling and stone"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Courage has followed his name since ancient times.</p>
-          <p>Does not measure strength by size or appearance.</p>
-          <p>Faces what seems greater than himself with resolve.</p>
-          <p>His name recalls the shepherd who became a king.</p>
-          <p>Leadership is strengthened by loyalty and tempered by experience.</p>
-          <p>Music, poetry and faith belong to his ancient tradition.</p>
-          <p>Knows that even the powerful must remain capable of humility.</p>
+
+          <p>
+            Courage has followed his name since ancient times.
+          </p>
+
+          <p>
+            Does not measure strength by size or appearance.
+          </p>
+
+          <p>
+            Faces what seems greater than himself with resolve.
+          </p>
+
+          <p>
+            His name recalls the shepherd who became a king.
+          </p>
+
+          <p>
+            Leadership is strengthened by loyalty and tempered by experience.
+          </p>
+
+          <p>
+            Music, poetry and faith belong to his ancient tradition.
+          </p>
+
+          <p>
+            Knows that even the powerful must remain capable of humility.
+          </p>
+
+          <p>
+            His name carries the enduring qualities of courage,
+            devotion, leadership and the beloved.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- CRAIG -->
+
+    <!-- =====================
+         IV · CRAIG
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">IV</div>
@@ -434,25 +857,66 @@
           Scottish Gaelic · creag · rock or crag
         </div>
 
-        <div class="symbol">▲</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/craig.png"
+            alt="Craig — Stand Firm — rock and crag"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Strength and solidity stand at the foundation of his name.</p>
-          <p>Remains firm when circumstances change around him.</p>
-          <p>Reliability is valued more highly than display.</p>
-          <p>Offers others something steady upon which to depend.</p>
-          <p>Has the endurance of the rock from which his name comes.</p>
-          <p>Does not easily yield when his course is certain.</p>
-          <p>Knows that true strength is often quiet and immovable.</p>
+
+          <p>
+            Strength and solidity stand at the foundation of his name.
+          </p>
+
+          <p>
+            Remains firm when circumstances change around him.
+          </p>
+
+          <p>
+            Reliability is valued more highly than display.
+          </p>
+
+          <p>
+            Offers others something steady upon which to depend.
+          </p>
+
+          <p>
+            Has the endurance of the rock from which his name comes.
+          </p>
+
+          <p>
+            Does not easily yield when his course is certain.
+          </p>
+
+          <p>
+            Knows that true strength is often quiet and immovable.
+          </p>
+
+          <p>
+            His name carries the ancient qualities of steadfastness,
+            endurance, strength and dependability.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- SIMON -->
+
+    <!-- =====================
+         V · SIMON
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">V</div>
@@ -463,25 +927,61 @@
           Hebrew origin · he who hears
         </div>
 
-        <div class="symbol">◖</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/simon.png"
+            alt="Simon — Listen — ear"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Patient is how others describe him.</p>
-          <p>Is fortified by a strong faith in himself.</p>
-          <p>Has a thoughtful and questioning mind.</p>
-          <p>Guided by the sure and the true.</p>
-          <p>Knows that life is made more beautiful by sharing.</p>
-          <p>On his journey he appreciates each and every step.</p>
-          <p>Initiates many good plans.</p>
+
+          <p>
+            Patient is how others describe him.
+          </p>
+
+          <p>
+            Is fortified by a strong faith in himself.
+          </p>
+
+          <p>
+            Has a thoughtful and questioning mind.
+          </p>
+
+          <p>
+            Guided by the sure and the true.
+          </p>
+
+          <p>
+            Knows that life is made more beautiful by sharing.
+          </p>
+
+          <p>
+            On his journey he appreciates each and every step.
+          </p>
+
+          <p>
+            Initiates many good plans.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- SEÁN -->
+
+    <!-- =====================
+         VI · SEÁN
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">VI</div>
@@ -492,25 +992,66 @@
           Irish form of John · God is gracious
         </div>
 
-        <div class="symbol">✋</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/sean.png"
+            alt="Seán — Give — open hand"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Grace lies at the heart of his name.</p>
-          <p>Values what is given rather than merely possessed.</p>
-          <p>Has strength grounded in humility.</p>
-          <p>Faith and conviction have followed his name through generations.</p>
-          <p>Knows that generosity is greatest when freely offered.</p>
-          <p>Meets good fortune with gratitude.</p>
-          <p>Carries one of Ireland's most enduring names.</p>
+
+          <p>
+            Grace lies at the heart of his name.
+          </p>
+
+          <p>
+            Values what is given rather than merely possessed.
+          </p>
+
+          <p>
+            Has strength grounded in humility.
+          </p>
+
+          <p>
+            Faith and conviction have followed his name through generations.
+          </p>
+
+          <p>
+            Knows that generosity is greatest when freely offered.
+          </p>
+
+          <p>
+            Meets good fortune with gratitude.
+          </p>
+
+          <p>
+            Carries one of Ireland's most enduring names.
+          </p>
+
+          <p>
+            His name speaks of grace, faith, gratitude
+            and generosity of spirit.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- SCOTT -->
+
+    <!-- =====================
+         VII · SCOTT
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">VII</div>
@@ -521,25 +1062,67 @@
           Ancient name · a Scot · one from Scotland
         </div>
 
-        <div class="symbol">♜</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/scott.png"
+            alt="Scott — Endure — Scottish thistle"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Carries in his name a strong sense of place and belonging.</p>
-          <p>Independence has long been part of its inheritance.</p>
-          <p>Values loyalty to his people and to his roots.</p>
-          <p>Meets hardship with endurance.</p>
-          <p>Has a practical strength that does not need display.</p>
-          <p>Tradition is remembered, but does not prevent him forging his own path.</p>
-          <p>Stands firm when circumstances demand it.</p>
+
+          <p>
+            Carries in his name a strong sense of place and belonging.
+          </p>
+
+          <p>
+            Independence has long been part of its inheritance.
+          </p>
+
+          <p>
+            Values loyalty to his people and to his roots.
+          </p>
+
+          <p>
+            Meets hardship with endurance.
+          </p>
+
+          <p>
+            Has a practical strength that does not need display.
+          </p>
+
+          <p>
+            Tradition is remembered, but does not prevent him
+            forging his own path.
+          </p>
+
+          <p>
+            Stands firm when circumstances demand it.
+          </p>
+
+          <p>
+            His name carries associations of heritage,
+            independence, loyalty and resilience.
+          </p>
+
         </div>
 
       </div>
+
     </article>
 
 
-    <!-- CONALL -->
+
+    <!-- =====================
+         VIII · CONALL
+         ===================== -->
 
     <article class="member">
+
       <div class="member-inner">
 
         <div class="number">VIII</div>
@@ -550,42 +1133,94 @@
           Ancient Irish &amp; Gaelic · strong wolf
         </div>
 
-        <div class="symbol">◇</div>
+        <div class="symbol-wrap">
+
+          <img
+            src="images/conall.png"
+            alt="Conall — Protect — wolf"
+            class="member-symbol"
+            loading="lazy"
+          >
+
+        </div>
 
         <div class="lines">
-          <p>Courage has followed his name through the ages.</p>
-          <p>Loyalty is given fiercely and held steadfastly.</p>
-          <p>Strength is used to protect what he holds dear.</p>
-          <p>Has the spirit of the warrior, but the devotion of the guardian.</p>
-          <p>Leadership comes through courage and resolve.</p>
-          <p>Does not easily turn from a path once chosen.</p>
-          <p>Carries the ancient qualities of the wolf — strength, loyalty and fearlessness.</p>
-          <p>Like Conall Cernach, “Conall the Victorious,” meets adversity with an unconquered spirit.</p>
+
+          <p>
+            Courage has followed his name through the ages.
+          </p>
+
+          <p>
+            Loyalty is given fiercely and held steadfastly.
+          </p>
+
+          <p>
+            Strength is used to protect what he holds dear.
+          </p>
+
+          <p>
+            Has the spirit of the warrior, but the devotion of the guardian.
+          </p>
+
+          <p>
+            Leadership comes through courage and resolve.
+          </p>
+
+          <p>
+            Does not easily turn from a path once chosen.
+          </p>
+
+          <p>
+            Carries the ancient qualities of the wolf —
+            strength, loyalty and fearlessness.
+          </p>
+
+          <p>
+            Like Conall Cernach, “Conall the Victorious,”
+            meets adversity with an unconquered spirit.
+          </p>
+
+          <p>
+            His name has endured through centuries of Irish history,
+            associated with warriors, heroes and kings.
+          </p>
+
         </div>
 
       </div>
+
     </article>
+
 
   </main>
 
 
-  <!-- CLOSING -->
+
+  <!-- =========================
+       CLOSING
+       ========================= -->
 
   <section class="ending">
 
-    <div class="small-wheel">⊕</div>
+    <div class="ending-wheel"></div>
 
     <h2>EX OCTO, UNUM</h2>
 
-    <p>From Eight, One.</p>
+    <p>
+      From Eight, One.
+    </p>
 
-    <div class="founding">MMXIII</div>
+    <div class="founding">
+      MMXIII
+    </div>
 
   </section>
+
 
   <footer>
     THE FOUNDING FATHERS
   </footer>
+
 
 </body>
 </html>
